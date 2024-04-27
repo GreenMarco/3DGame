@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2wd4deibe4uo"]
+
+[ext_resource type="PackedScene" uid="uid://b00c0pdng0rlp" path="res://block.tscn" id="1_4ugl2"]
+[ext_resource type="Texture2D" uid="uid://c0mgabg16tnye" path="res://icon.svg" id="3_6ysvm"]
+[ext_resource type="Script" path="res://Icon.gd" id="4_8rx3r"]
+[ext_resource type="PackedScene" uid="uid://b8d57bnew4c11" path="res://coin.tscn" id="5_3oluw"]
+[ext_resource type="PackedScene" uid="uid://dosnd5bb41j1s" path="res://punch.tscn" id="5_sosmk"]
+[ext_resource type="Environment" uid="uid://c6klxeohlplw8" path="res://level_1.tres" id="6_wut6c"]
+[ext_resource type="PackedScene" uid="uid://i1dpobigqyje" path="res://hud.tscn" id="7_2qm1m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc24o"]
+albedo_color = Color(0.235294, 0, 0.258824, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bq3sr"]
+material = SubResource("StandardMaterial3D_wc24o")
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vhvp"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D"]
+transform = Transform3D(-0.999826, 0, -0.018639, 0, 1, 0, 0.018639, 0, -0.999826, 0, 0, 0)
+
+[node name="Floors" type="Node3D" parent="."]
+
+[node name="Foor" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.251045, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Foor"]
+mesh = SubResource("BoxMesh_bq3sr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Foor"]
+shape = SubResource("BoxShape3D_5vhvp")
+
+[node name="Foor2" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(1.22988, 0, 4.65661e-10, 0, 1.003, 0, 5.58794e-09, 0, 0.384924, -10.1391, -0.251045, -0.189016)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Foor2"]
+mesh = SubResource("BoxMesh_bq3sr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Foor2"]
+shape = SubResource("BoxShape3D_5vhvp")
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block1" parent="Blocks" instance=ExtResource("1_4ugl2")]
+transform = Transform3D(1, 1.86265e-09, -3.72529e-09, 0, 0.83962, -0.543174, 0, 0.543174, 0.83962, 9.1797, 2.98545, 0.17113)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("1_4ugl2")]
+transform = Transform3D(0.643015, 0.643026, -0.415992, -0.765854, 0.539888, -0.349269, 0, 0.543174, 0.83962, 9.1343, 4.3891, -0.83937)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("1_4ugl2")]
+transform = Transform3D(0.732757, -0.369625, -0.571354, 0, 0.83962, -0.543174, 0.680491, 0.398015, 0.615237, 8.82983, 4.61455, 0.899366)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("1_4ugl2")]
+transform = Transform3D(0.471173, 0.101556, -0.876175, -0.765854, 0.539888, -0.349269, 0.437566, 0.835588, 0.332158, 9.46713, 6.01821, 0.121372)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.833627, -0.285439, 0.472854, -0.549384, -0.340236, 0.763163, -0.0569542, -0.895971, -0.440445, 3.45802, 9.77302, -2.84435)
+shadow_enabled = true
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.340009, 0.668112, -2.32341)
+visible = false
+texture = ExtResource("3_6ysvm")
+script = ExtResource("4_8rx3r")
+
+[node name="Coins" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0773563, 0.668112, -4.14952)
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_3oluw")]
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42909, 0, -0.0266414)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365255, 0, 1.95929)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46562, 0, 1.93265)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0788015, 0, 4.22704)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5079, 0, 4.2004)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115327, 0, 6.18633)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54442, 0, 6.15968)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82757, 0, 0.0527124)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39848, 0, 0.0260706)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79105, 0, 2.012)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36195, 0, 1.98536)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74877, 0, 4.27975)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31968, 0, 4.25311)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71224, 0, 6.23904)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("5_3oluw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28315, 0, 6.21239)
+
+[node name="Punch" parent="." instance=ExtResource("5_sosmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14605, 0.145207, -4.02831)
+
+[node name="HUD" parent="." instance=ExtResource("7_2qm1m")]
+anchors_preset = 15
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_wut6c")
+
+[connection signal="pressed" from="HUD/Jump" to="Punch" method="_on_jump_pressed"]
+
+[editable path="HUD"]
