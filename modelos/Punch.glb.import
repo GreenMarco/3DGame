@@ -1,0 +1,57 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ckpxa61j13vot"
+path="res://.godot/imported/Punch.glb-473b2c2c24acb826e40a755209f2700d.scn"
+
+[deps]
+
+source_file="res://modelos/Punch.glb"
+dest_files=["res://.godot/imported/Punch.glb-473b2c2c24acb826e40a755209f2700d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"Punch_HPC__Mt_B_HPC": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://modelos/punch_up.res"
+},
+"Punch_HPC_cover__Mt_B_HPC": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://modelos/punch_down.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
