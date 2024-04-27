@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://i1dpobigqyje"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_vr014"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("1_vr014")]
+layout_mode = 1
+offset_left = 4.0
+offset_top = -328.0
+offset_right = 324.0
+offset_bottom = -6.0
+
+[node name="Jump" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.211765)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.974
+anchor_top = 0.958
+anchor_right = 0.974
+anchor_bottom = 0.958
+offset_left = -316.996
+offset_top = -205.952
+offset_right = 0.00390625
+offset_bottom = 0.0479736
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.127
+anchor_right = 0.261
+anchor_bottom = 0.127
+offset_left = -0.194
+offset_top = 3.212
+offset_right = 253.806
+offset_bottom = 140.212
